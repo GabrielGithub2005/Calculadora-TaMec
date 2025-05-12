@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de 80%</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+    }
+
+    .container {
+      background-color: #fff;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="number"],
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      margin-top: 10px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: linear-gradient(to bottom, #e0e0e0, #ccc);
+      border: 1px solid #aaa;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background: linear-gradient(to bottom, #d0d0d0, #bbb);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Calcular +80% de um valor</h2>
+    <input type="number" id="valorBase" placeholder="Digite o valor base (ex: 50000)" />
+    <button onclick="calcular()">Calcular Total</button>
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      const valor = parseFloat(document.getElementById("valorBase").value);
+      const resultado = document.getElementById("resultado");
+
+      if (isNaN(valor)) {
+        resultado.innerText = "Por favor, digite um número válido.";
+        return;
+      }
+
+      const total = valor * 1.8; // valor + 80%
+
+      // Formatação no estilo brasileiro: ponto nos milhares e vírgula nos decimais
+      const totalFormatado = total.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
+
+      resultado.innerText = `Total com +80%: ${totalFormatado}`;
+    }
+  </script>
+</body>
+</html>
