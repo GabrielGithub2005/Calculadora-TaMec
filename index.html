@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de 80%</title>
+  <title>Calculadora de 20%</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -61,7 +60,7 @@
 </head>
 <body>
   <div class="container">
-    <h2>Calcular +80% de um valor</h2>
+    <h2>Calcular +20% de um valor</h2>
     <input type="number" id="valorBase" placeholder="Digite o valor base (ex: 50000)" />
     <button onclick="calcular()">Calcular Total</button>
     <div class="result" id="resultado"></div>
@@ -77,15 +76,14 @@
         return;
       }
 
-      const total = valor * 1.8; // valor + 80%
+      const total = valor * 1.2; // valor + 20%
 
-      // Formatação no estilo brasileiro: ponto nos milhares e vírgula nos decimais
       const totalFormatado = total.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
       });
 
-      resultado.innerText = `Total com +80%: ${totalFormatado}`;
+      resultado.innerText = `Total com +20%: ${totalFormatado}`;
     }
   </script>
 </body>
