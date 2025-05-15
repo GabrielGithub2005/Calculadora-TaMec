@@ -60,9 +60,9 @@
 </head>
 <body>
   <div class="container">
-    <h2>Calcular +20% de um valor</h2>
+    <h2>Calcular 20% de um valor</h2>
     <input type="number" id="valorBase" placeholder="Digite o valor base (ex: 50000)" />
-    <button onclick="calcular()">Calcular Total</button>
+    <button onclick="calcular()">Calcular 20%</button>
     <div class="result" id="resultado"></div>
   </div>
 
@@ -76,14 +76,14 @@
         return;
       }
 
-      const total = valor * 1.2; // valor + 20%
+      const porcentagem = valor * 0.20; // apenas os 20%
 
-      const totalFormatado = total.toLocaleString('pt-BR', {
+      const porcentagemFormatada = porcentagem.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
       });
 
-      resultado.innerText = `Total com +20%: ${totalFormatado}`;
+      resultado.innerText = `20% do valor é: ${porcentagemFormatada}`;
     }
   </script>
 </body>
